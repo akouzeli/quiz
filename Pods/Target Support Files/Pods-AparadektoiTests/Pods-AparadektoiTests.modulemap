@@ -1,0 +1,6 @@
+framework module Pods_AparadektoiTests {
+  umbrella header "Pods-AparadektoiTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

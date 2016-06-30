@@ -1,0 +1,34 @@
+[
+    {
+        "question": "Ποια είναι η σωστή απάντηση στην ερώτηση q0?",
+        "answer_0": "q0a0",
+        "answer_1": "q0a1",
+        "answer_2": "q0a2",
+        "answer_3": "q0a3",
+        "correct_answer": "q0a0"
+    },
+    {
+        "question": "Ποια είναι η σωστή απάντηση στην ερώτηση q1?",
+        "answer_0": "q1a0",
+        "answer_1": "q1a1",
+        "answer_2": "q1a2",
+        "answer_3": "q1a3",
+        "correct_answer": "q1a1"
+    },
+    {
+        "question": "Ποια είναι η σωστή απάντηση στην ερώτηση q2?",
+        "answer_0": "q2a0",
+        "answer_1": "q2a1",
+        "answer_2": "q2a2",
+        "answer_3": "q2a3",
+        "correct_answer": "q2a2"
+    },
+    {
+        "question": "Ποια είναι η σωστή απάντηση στην ερώτηση q3?",
+        "answer_0": "q3a0",
+        "answer_1": "q3a1",
+        "answer_2": "q3a2",
+        "answer_3": "q3a3",
+        "correct_answer": "q3a3"
+    }
+]
