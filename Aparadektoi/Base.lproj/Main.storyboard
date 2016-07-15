@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -73,72 +74,119 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-3R-mGx" userLabel="Question" customClass="QuestionLabel" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="600" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epE-7N-f4X" userLabel="Timer" customClass="TimerLabel" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="5" y="74" width="590" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-Kn-NsK" userLabel="AnswerOne" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="234" width="600" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-Kn-NsK" userLabel="Answer0" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="254" width="600" height="54"/>
                                 <accessibility key="accessibilityConfiguration" identifier="one"/>
                                 <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="MGc-oE-5rl" kind="show" id="ue9-SX-JJE"/>
+                                    <action selector="markAnswer:" destination="MGc-oE-5rl" eventType="touchUpInside" id="WLz-qO-RKN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS2-bF-D73" userLabel="AnswerTwo" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="301" width="600" height="65"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS2-bF-D73" userLabel="Answer1" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="310" width="600" height="54"/>
                                 <accessibility key="accessibilityConfiguration" identifier="two"/>
                                 <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="MGc-oE-5rl" kind="show" id="CMD-sA-56F"/>
+                                    <action selector="markAnswer:" destination="MGc-oE-5rl" eventType="touchUpInside" id="bYM-02-Snf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfg-z2-CWL" userLabel="AnswerThree" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="368" width="600" height="65"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfg-z2-CWL" userLabel="Answer2" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="366" width="600" height="53.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="three"/>
                                 <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="MGc-oE-5rl" kind="show" id="Abl-PA-byc"/>
+                                    <action selector="markAnswer:" destination="MGc-oE-5rl" eventType="touchUpInside" id="vkE-h8-KPm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-a9-vhv" userLabel="AnswerFour" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="435" width="600" height="65"/>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-a9-vhv" userLabel="Answer3" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="421.5" width="600" height="54"/>
                                 <accessibility key="accessibilityConfiguration" identifier="four"/>
                                 <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="MGc-oE-5rl" kind="show" id="wPR-rs-O1y"/>
+                                    <action selector="markAnswer:" destination="MGc-oE-5rl" eventType="touchUpInside" id="S3q-Kd-eZK"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-1n-YH0" userLabel="Next" customClass="NextQuestionButton" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="150" y="507" width="300" height="54"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="MGc-oE-5rl" kind="show" identifier="quizViewController" id="nGO-Dl-JZ7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-3R-mGx" userLabel="Question" customClass="QuestionLabel" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="5" y="104" width="590" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="width" secondItem="dLd-Kn-NsK" secondAttribute="width" id="3fz-Ms-ZpE"/>
+                            <constraint firstItem="wHC-1n-YH0" firstAttribute="top" secondItem="DHi-a9-vhv" secondAttribute="bottom" constant="31" id="4cf-Mw-ZQc"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="6dz-TH-M3I"/>
                             <constraint firstItem="dLd-Kn-NsK" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" id="A7b-ED-4LH"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="top" secondItem="hS2-bF-D73" secondAttribute="bottom" constant="2" id="AGS-wk-MEU"/>
+                            <constraint firstItem="epE-7N-f4X" firstAttribute="bottom" secondItem="NTx-3R-mGx" secondAttribute="top" constant="20" id="BtN-BG-FMe"/>
                             <constraint firstItem="THc-lH-A46" firstAttribute="top" secondItem="DHi-a9-vhv" secondAttribute="bottom" constant="100" id="Cjq-Jh-m6g"/>
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="height" secondItem="dLd-Kn-NsK" secondAttribute="height" id="HC3-c9-pz9"/>
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="width" secondItem="dLd-Kn-NsK" secondAttribute="width" id="J5P-f7-UQt"/>
-                            <constraint firstItem="NTx-3R-mGx" firstAttribute="top" secondItem="qRb-pD-vjL" secondAttribute="bottom" constant="20" id="N4P-S6-vn3"/>
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="NR9-2S-aPK"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="top" secondItem="dLd-Kn-NsK" secondAttribute="bottom" constant="2" id="PQk-XN-vCv"/>
-                            <constraint firstItem="NTx-3R-mGx" firstAttribute="width" secondItem="hFJ-aN-CLx" secondAttribute="width" id="Qur-Ua-kem"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="width" secondItem="dLd-Kn-NsK" secondAttribute="width" id="RIR-TV-82J"/>
+                            <constraint firstItem="wHC-1n-YH0" firstAttribute="height" secondItem="DHi-a9-vhv" secondAttribute="height" id="RMP-Fx-70v"/>
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="top" secondItem="yfg-z2-CWL" secondAttribute="bottom" constant="2" id="T99-MM-fFq"/>
-                            <constraint firstItem="NTx-3R-mGx" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" id="TYO-rr-h06"/>
+                            <constraint firstItem="NTx-3R-mGx" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" constant="5" id="TYO-rr-h06"/>
+                            <constraint firstItem="NTx-3R-mGx" firstAttribute="top" secondItem="qRb-pD-vjL" secondAttribute="bottom" constant="40" id="WLK-G5-fFz"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="height" secondItem="dLd-Kn-NsK" secondAttribute="height" id="XWN-jf-f8V"/>
+                            <constraint firstItem="THc-lH-A46" firstAttribute="top" secondItem="wHC-1n-YH0" secondAttribute="bottom" constant="39" id="XXz-aI-Mku"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="height" secondItem="dLd-Kn-NsK" secondAttribute="height" id="Ymg-ck-wLX"/>
-                            <constraint firstItem="dLd-Kn-NsK" firstAttribute="top" secondItem="NTx-3R-mGx" secondAttribute="top" constant="150" id="bt7-og-Y61"/>
+                            <constraint firstItem="dLd-Kn-NsK" firstAttribute="top" secondItem="NTx-3R-mGx" secondAttribute="bottom" constant="100" id="bt7-og-Y61"/>
                             <constraint firstItem="dLd-Kn-NsK" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="chF-kY-epJ"/>
-                            <constraint firstAttribute="trailing" secondItem="NTx-3R-mGx" secondAttribute="trailing" id="kfJ-aw-sfy"/>
-                            <constraint firstItem="dLd-Kn-NsK" firstAttribute="width" secondItem="hFJ-aN-CLx" secondAttribute="width" id="lpa-6t-qgv"/>
+                            <constraint firstItem="epE-7N-f4X" firstAttribute="height" secondItem="NTx-3R-mGx" secondAttribute="height" id="dBL-KC-Jxo"/>
+                            <constraint firstItem="wHC-1n-YH0" firstAttribute="width" secondItem="DHi-a9-vhv" secondAttribute="width" multiplier="1:2" id="dTh-iy-akr"/>
+                            <constraint firstItem="epE-7N-f4X" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" constant="5" id="e6Q-3K-Q9q"/>
+                            <constraint firstAttribute="trailing" secondItem="NTx-3R-mGx" secondAttribute="trailing" constant="5" id="kfJ-aw-sfy"/>
+                            <constraint firstItem="epE-7N-f4X" firstAttribute="top" secondItem="qRb-pD-vjL" secondAttribute="bottom" constant="10" id="kgt-20-xgZ"/>
+                            <constraint firstAttribute="trailing" secondItem="epE-7N-f4X" secondAttribute="trailing" constant="5" id="lmD-4k-Dxs"/>
                             <constraint firstAttribute="trailing" secondItem="dLd-Kn-NsK" secondAttribute="trailing" id="uf0-RJ-wSR"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="yMh-KB-ZAQ"/>
+                            <constraint firstItem="wHC-1n-YH0" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="z8C-TT-Arr"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cjq-Jh-m6g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="countingLabel" destination="epE-7N-f4X" id="0rh-w9-QDF"/>
                         <outlet property="questionLabel" destination="NTx-3R-mGx" id="vA0-KU-4sy"/>
                         <outletCollection property="answerButtons" destination="dLd-Kn-NsK" collectionClass="NSMutableArray" id="epj-RU-h47"/>
                         <outletCollection property="answerButtons" destination="hS2-bF-D73" collectionClass="NSMutableArray" id="vi0-od-CJp"/>

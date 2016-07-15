@@ -25,44 +25,57 @@ class QuizDatum {
         return self.json;
     }
     
-    // Returns question and available answers at specific index
-    func fetchSetAtIndex(index: Int) -> JSON {
-        let quizSet = self.fetchJsonData()
-        return quizSet[index]
+    
+    // Returns question and relevant answers at random index.
+    func fetchQuizDataAtRandomIndex() -> JSON {
+        let jsonData = self.fetchJsonData()
+        let randomIndex = Int(arc4random_uniform(UInt32(jsonData.count)))
+        return jsonData[randomIndex]
     }
     
-    // Returns the question and the correct answer.
-    func fetchQuestionAndCorrectAnswerAtIndex(index: Int) -> (question: String, correctAnswer: String) {
-        let setAtIndex = self.fetchSetAtIndex(index)
-        let question = setAtIndex["question"].stringValue
-        let correctAnswer = setAtIndex["correct_answer"].stringValue
-        return (question, correctAnswer)
+    // Returns the question
+    func fetchQuestion(randomQuizData: JSON) -> String {
+        let question = randomQuizData["question"].stringValue
+        return question
     }
     
     // Returns an array with the available answers
-    func fetchAnswersAtIndex(index: Int) -> Array<String> {
-        let availableAnswers = 4
-        let setAtIndex = self.fetchSetAtIndex(index)
-        var answersArray = [String]()
-        for i in 0..<availableAnswers {
-            answersArray.append(setAtIndex["answer_\(i)"].stringValue)
-        }
-        return answersArray
-    }
-    
-    func randomItem(jsonData: JSON) -> Int {
-        let index = Int(arc4random_uniform(UInt32(jsonData.count)))
-        return index
-    }
-    
+    func fetchAnswers(randomQuizData: JSON) -> (answersArray: [JSON], answersEvaluationArray: [JSON]) {
+        let answers = randomQuizData["answers"]
+        var answersArray = [JSON]()
+        var answersEvaluationArray = [JSON]()
         
-//    func fetchRandomQuestionAndCorrectAnswer(jsonData: JSON) -> (question: String, correctAnswer: String) {
-//        let randomIndex = self.randomItem(jsonData)
-//        let randomSet = self.fetchSetAtIndex(randomIndex)
-//        let randomQuestion = randomSet["question"].stringValue
-//        let randomCorrectAnswer = randomSet["correct_answer"].stringValue
-//        return (randomQuestion, randomCorrectAnswer)
-//        
+        for i in 0..<answers.count {
+            answersArray.append(answers[i]["text"])
+            answersEvaluationArray.append(answers[i]["correct"])
+        }
+        return (answersArray, answersEvaluationArray)
+    }
+    
+    //
+    
+//    // Returns the question and the correct answer.
+//    func fetchQuestionAndCorrectAnswerAtIndex(index: Int) -> (question: String, correctAnswer: String) {
+//        let setAtIndex = self.fetchSetAtIndex(index)
+//        let question = setAtIndex["question"].stringValue
+//        let correctAnswer = setAtIndex["correct_answer"].stringValue
+//        return (question, correctAnswer)
+//    }
+    
+    // Returns an array with the available answers
+//    func fetchAnswersAtIndex(index: Int) -> Array<String> {
+//        let availableAnswers = 4
+//        let setAtIndex = self.fetchSetAtIndex(index)
+//        var answersArray = [String]()
+//        for i in 0..<availableAnswers {
+//            answersArray.append(setAtIndex["answer_\(i)"].stringValue)
+//        }
+//        return answersArray
+//    }
+//    
+//    func randomItem(jsonData: JSON) -> Int {
+//        let index = Int(arc4random_uniform(UInt32(jsonData.count)))
+//        return index
 //    }
     
   

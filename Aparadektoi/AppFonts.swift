@@ -10,12 +10,19 @@ import UIKit
 import Foundation
 
 class AppFonts: UIFont {
-    let answerFont : UIFont
-    let questionFont : UIFont
+    let answerFont: UIFont
+    let questionFont: UIFont
+    let nextQuestionFont: UIFont
+    let timerFont: UIFont
+    // Singleton object for fonts
+    static let sharedInstance = AppFonts()
+
     
-    override init() {
-        questionFont = UIFont (name: "HelveticaNeue-Medium", size: 14)!
-        answerFont = UIFont (name: "HelveticaNeue", size: 12)!
+    private override init() {
+        questionFont = UIFont(name: "HelveticaNeue-Medium", size: 14)!
+        timerFont = UIFont(name: "HelveticaNeue-Bold", size: 14)!
+        answerFont = UIFont(name: "HelveticaNeue", size: 12)!
+        nextQuestionFont = UIFont(name: "HelveticaNeue-Medium", size: 12)!
     }
     
 }
