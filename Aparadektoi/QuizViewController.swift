@@ -27,12 +27,16 @@ class QuizViewController: UIViewController {
     var quizData: JSON = []
     var answersEvaluation = [JSON]()
     
+    var counter = 0
+    var timer = NSTimer()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.quizData = self.myQuizDatum.fetchQuizDataAtRandomIndex()
         
-        let question = self.myQuizDatum.fetchQuestion(quizData)
-        let answers = self.myQuizDatum.fetchAnswers(quizData).answersArray
+        quizData = myQuizDatum.fetchQuizDataAtRandomIndex()
+        let question = myQuizDatum.fetchQuestion(quizData)
+        let answers = myQuizDatum.fetchAnswers(quizData).answersArray
         
         
         // Display the question
@@ -50,7 +54,8 @@ class QuizViewController: UIViewController {
 //        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
 //            self.performSegueWithIdentifier("quizViewController", sender: self)
 //        })
-
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(countUp), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,10 +63,16 @@ class QuizViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Increase timer counter
+    func countUp() {
+        counter += 1
+        countingLabel.text = String(counter)
+    }
+    
     // Inactivate answers that were not selected
-    func inactivateOtherAnswers(exceptIndex: Int, numOfAnswers: Int) {
+    func inactivateOtherAnswers(exceptFromIndex: Int, numOfAnswers: Int) {
         for i in 0..<numOfAnswers {
-            if i != exceptIndex {
+            if i != exceptFromIndex {
                 answerButtons[i].enabled = false
             }
         }
@@ -69,16 +80,18 @@ class QuizViewController: UIViewController {
   
     // Mark selected answers
     @IBAction func markAnswer(sender: AnswerButton) {
-        self.answersEvaluation = self.myQuizDatum.fetchAnswers(self.quizData).answersEvaluationArray
+        answersEvaluation = myQuizDatum.fetchAnswers(quizData).answersEvaluationArray
         // Mark wrong answer
-        if !self.answersEvaluation[sender.index] {
+        if !answersEvaluation[sender.index] {
             sender.backgroundColor = sender.wrongAnswerBackgroundColor
         } else {
             // Mark correct answer
             sender.backgroundColor = sender.correctAnswerBackgroundColor
         }
-        self.inactivateOtherAnswers(sender.index, numOfAnswers: self.answersEvaluation.count)
+        inactivateOtherAnswers(sender.index, numOfAnswers: answersEvaluation.count)
+        
+        // Pause timer
+        timer.invalidate()
+
     }
-    
-    
 }

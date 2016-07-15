@@ -22,13 +22,13 @@ class QuizDatum {
     }
     
     func fetchJsonData() -> JSON {
-        return self.json;
+        return json;
     }
     
     
     // Returns question and relevant answers at random index.
     func fetchQuizDataAtRandomIndex() -> JSON {
-        let jsonData = self.fetchJsonData()
+        let jsonData = fetchJsonData()
         let randomIndex = Int(arc4random_uniform(UInt32(jsonData.count)))
         return jsonData[randomIndex]
     }
