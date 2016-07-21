@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		093F99B4D5B804653DA82FFE /* Pods_AparadektoiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76233E3E3324DB9098875210 /* Pods_AparadektoiTests.framework */; };
 		32BAB2B09BA2766DFCA2BD55 /* Pods_AparadektoiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF50B4E3187E5B6CDDC003D9 /* Pods_AparadektoiUITests.framework */; };
-		A82538C71D1FD0E000C35C72 /* QuizDatum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82538C61D1FD0E000C35C72 /* QuizDatum.swift */; };
 		A837EDCF1D34F750008D0945 /* NextQuestionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837EDCE1D34F750008D0945 /* NextQuestionButton.swift */; };
 		A875B6081D250316003D36F9 /* quizData.json in Resources */ = {isa = PBXBuildFile; fileRef = A875B6071D250316003D36F9 /* quizData.json */; };
 		A87613A51D1BBEB900D3111A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87613A41D1BBEB900D3111A /* AppDelegate.swift */; };
@@ -21,9 +20,12 @@
 		A87613C51D1BBEB900D3111A /* AparadektoiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87613C41D1BBEB900D3111A /* AparadektoiUITests.swift */; };
 		A8E2F0251D1E544200706C43 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2F0241D1E544200706C43 /* AppFonts.swift */; };
 		A8E2F0271D1E67B200706C43 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E2F0261D1E67B200706C43 /* QuizViewController.swift */; };
+		A8EF4A2D1D3CEF2700FAF7A9 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF4A2C1D3CEF2700FAF7A9 /* Timer.swift */; };
 		A8F227581D381F9E00333608 /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F227571D381F9E00333608 /* TimerLabel.swift */; };
 		A8F3D22E1D1D577000EA8807 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3D22D1D1D577000EA8807 /* AnswerButton.swift */; };
 		A8F3D2301D1D578400EA8807 /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3D22F1D1D578400EA8807 /* QuestionLabel.swift */; };
+		A8F4F4771D3FAE7C0072A5D8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */; };
+		A8F7D3501D3E758B006BFDA7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F7D34D1D3E60D9006BFDA7 /* SwiftyJSON.framework */; };
 		FE29D307649FD0BEDE8948A5 /* Pods_Aparadektoi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A0F36F695038C36D440797 /* Pods_Aparadektoi.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,6 @@
 		8DE5F8DCB20C19EDB32F1CFA /* Pods-AparadektoiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AparadektoiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AparadektoiUITests/Pods-AparadektoiUITests.release.xcconfig"; sourceTree = "<group>"; };
 		930BB0E66BC9C8E31AD8D2A0 /* Pods-AparadektoiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AparadektoiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AparadektoiTests/Pods-AparadektoiTests.release.xcconfig"; sourceTree = "<group>"; };
 		94D1414E5A0E6C3B8354685F /* Pods-Aparadektoi.release pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aparadektoi.release pods.xcconfig"; path = "Pods/Target Support Files/Pods-Aparadektoi/Pods-Aparadektoi.release pods.xcconfig"; sourceTree = "<group>"; };
-		A82538C61D1FD0E000C35C72 /* QuizDatum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizDatum.swift; sourceTree = "<group>"; };
 		A837EDCE1D34F750008D0945 /* NextQuestionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextQuestionButton.swift; sourceTree = "<group>"; };
 		A875B6071D250316003D36F9 /* quizData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizData.json; sourceTree = "<group>"; };
 		A87613A11D1BBEB800D3111A /* Aparadektoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Aparadektoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,9 +72,12 @@
 		A87613C61D1BBEB900D3111A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8E2F0241D1E544200706C43 /* AppFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		A8E2F0261D1E67B200706C43 /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		A8EF4A2C1D3CEF2700FAF7A9 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		A8F227571D381F9E00333608 /* TimerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		A8F3D22D1D1D577000EA8807 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		A8F3D22F1D1D578400EA8807 /* QuestionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
+		A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A8F7D34D1D3E60D9006BFDA7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Aparadektoi-haquietfackukgdzcrirpqgbabfd/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		AD746EE977AA9B37C7E157E5 /* Pods-AparadektoiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AparadektoiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AparadektoiTests/Pods-AparadektoiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF50B4E3187E5B6CDDC003D9 /* Pods_AparadektoiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AparadektoiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24D8043D7D4CF87456E9825 /* Pods-Aparadektoi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aparadektoi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aparadektoi/Pods-Aparadektoi.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F7D3501D3E758B006BFDA7 /* SwiftyJSON.framework in Frameworks */,
 				FE29D307649FD0BEDE8948A5 /* Pods_Aparadektoi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +117,7 @@
 		70DB033F4EA443C89E49DD4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8F7D34D1D3E60D9006BFDA7 /* SwiftyJSON.framework */,
 				655E580B3779BE61E7426FD2 /* Pods.framework */,
 				F7A0F36F695038C36D440797 /* Pods_Aparadektoi.framework */,
 				76233E3E3324DB9098875210 /* Pods_AparadektoiTests.framework */,
@@ -188,7 +194,8 @@
 		A876FC831D1FFFB800BBCA27 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A82538C61D1FD0E000C35C72 /* QuizDatum.swift */,
+				A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */,
+				A8EF4A2C1D3CEF2700FAF7A9 /* Timer.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -486,9 +493,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E2F0251D1E544200706C43 /* AppFonts.swift in Sources */,
+				A8F4F4771D3FAE7C0072A5D8 /* DataManager.swift in Sources */,
 				A8F227581D381F9E00333608 /* TimerLabel.swift in Sources */,
 				A87613A71D1BBEB900D3111A /* ViewController.swift in Sources */,
-				A82538C71D1FD0E000C35C72 /* QuizDatum.swift in Sources */,
+				A8EF4A2D1D3CEF2700FAF7A9 /* Timer.swift in Sources */,
 				A8F3D2301D1D578400EA8807 /* QuestionLabel.swift in Sources */,
 				A8E2F0271D1E67B200706C43 /* QuizViewController.swift in Sources */,
 				A8F3D22E1D1D577000EA8807 /* AnswerButton.swift in Sources */,
@@ -584,6 +592,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = "Release Pods";
 		};
@@ -595,9 +604,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aparadektoi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = akouzeli.Aparadektoi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = "Release Pods";
 		};
@@ -669,6 +680,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -708,6 +720,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -719,9 +732,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aparadektoi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = akouzeli.Aparadektoi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -733,9 +748,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Aparadektoi/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = akouzeli.Aparadektoi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};
