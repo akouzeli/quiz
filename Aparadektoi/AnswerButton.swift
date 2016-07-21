@@ -28,10 +28,5 @@ class AnswerButton: UIButton {
         // Font for the answer button text.
         let appFonts = AppFonts.sharedInstance
         self.titleLabel?.font = appFonts.answerFont
-        //let fonts = AppFonts()
-        //let fonts = AppFonts.sharedInstance
-       // self.titleLabel?.font = fonts.answerFont
-
     }
-    
 }

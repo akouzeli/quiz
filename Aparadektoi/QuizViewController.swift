@@ -12,32 +12,37 @@ import SwiftyJSON
 
 class QuizViewController: UIViewController {
     
-    // Buttons for question and available answers
-//    @IBOutlet weak var answerOneButton: AnswerButton!
-//    @IBOutlet weak var answerTwoButton: AnswerButton!
-    
-//    @IBOutlet weak var answerThreeButton: AnswerButton!
-//    @IBOutlet weak var answerFourButton: AnswerButton!
+    // Buttons for question and available answers.
     @IBOutlet weak var questionLabel: QuestionLabel!
-
-    @IBOutlet weak var countingLabel: TimerLabel!
     @IBOutlet var answerButtons: [AnswerButton]!
     
-    let myQuizDatum = QuizDatum()
-    var quizData: JSON = []
-    var answersEvaluation = [JSON]()
+    // Timer's label.
+    @IBOutlet weak var countingLabel: TimerLabel!
     
-    var counter = 0
+    // The property variable that holds a random data set, consisted of a question, 
+    // its relevant answers and their evaluation.
+    var quizDataSet: (question: String, answers: [JSON], answersEvaluation:[JSON])
+    
+    // Variables related to the timer's counter.
     var timer = NSTimer()
-
+    var quizTimer = Timer.timerSharedInstance
+    var counter: Int
     
+    required init?(coder aDecoder: NSCoder) {
+        let myQuizData = DataManager.dataSharedInstance
+        // Initialize the quiz data set.
+        quizDataSet = myQuizData.fetchQuizDataSetAtRandomIndex()
+        
+        counter = quizTimer.counter
+        super.init(coder: aDecoder)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        quizData = myQuizDatum.fetchQuizDataAtRandomIndex()
-        let question = myQuizDatum.fetchQuestion(quizData)
-        let answers = myQuizDatum.fetchAnswers(quizData).answersArray
-        
+        // Question and answers
+        let question = quizDataSet.question
+        let answers = quizDataSet.answers
         
         // Display the question
         questionLabel.text = question
@@ -48,14 +53,16 @@ class QuizViewController: UIViewController {
         }
         
         
-//        let seconds = 2.0
-//        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
-//        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-//        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-//            self.performSegueWithIdentifier("quizViewController", sender: self)
-//        })
+       /* let seconds = 2.0
+        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            self.performSegueWithIdentifier("quizViewController", sender: self)
+        })*/
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(countUp), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(displayTimer), userInfo: nil, repeats: true)
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,16 +70,16 @@ class QuizViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // Increase timer counter
-    func countUp() {
-        counter += 1
-        countingLabel.text = String(counter)
+    // Method used for displaying the timer's counter.
+    func displayTimer() {
+        let timerValue = quizTimer.decreaseTimerCounter()
+        countingLabel.text = String(timerValue)
     }
     
     // Inactivate answers that were not selected
-    func inactivateOtherAnswers(exceptFromIndex: Int, numOfAnswers: Int) {
-        for i in 0..<numOfAnswers {
-            if i != exceptFromIndex {
+    func inactivateOtherAnswers(exceptFrom index: Int, numOfAnswers number: Int) {
+        for i in 0..<number {
+            if i != index {
                 answerButtons[i].enabled = false
             }
         }
@@ -80,18 +87,20 @@ class QuizViewController: UIViewController {
   
     // Mark selected answers
     @IBAction func markAnswer(sender: AnswerButton) {
-        answersEvaluation = myQuizDatum.fetchAnswers(quizData).answersEvaluationArray
-        // Mark wrong answer
+        // Array that holds the answers evaluation.
+        var answersEvaluation = quizDataSet.answersEvaluation
+        // Mark wrong answer.
         if !answersEvaluation[sender.index] {
             sender.backgroundColor = sender.wrongAnswerBackgroundColor
         } else {
-            // Mark correct answer
+            // Mark correct answer.
             sender.backgroundColor = sender.correctAnswerBackgroundColor
         }
-        inactivateOtherAnswers(sender.index, numOfAnswers: answersEvaluation.count)
+        // Inactivate wrong answers.
+        inactivateOtherAnswers(exceptFrom: sender.index, numOfAnswers: answersEvaluation.count)
         
-        // Pause timer
+        // Pause timer when an answer is selected.
         timer.invalidate()
-
     }
+    
 }

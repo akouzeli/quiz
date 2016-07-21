@@ -13,7 +13,6 @@ class NextQuestionButton: UIButton {
     @IBInspectable let background: UIColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
     @IBInspectable let textColor: UIColor = UIColor.whiteColor()
     
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -22,7 +21,6 @@ class NextQuestionButton: UIButton {
         self.tintColor = textColor
         
         // Font for the answer button text.
-        //let buttonTextFont = AppFonts()
         let appFonts = AppFonts.sharedInstance
         self.titleLabel?.font = appFonts.nextQuestionFont
         self.setTitle("Επόμενη Ερώτηση", forState: .Normal)

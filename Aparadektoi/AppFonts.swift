@@ -14,7 +14,11 @@ class AppFonts: UIFont {
     let questionFont: UIFont
     let nextQuestionFont: UIFont
     let timerFont: UIFont
-    // Singleton object for fonts
+    
+    /** 
+     * Static property variable, that will be used
+     * for accessing the singleton object.
+     */
     static let sharedInstance = AppFonts()
 
     
