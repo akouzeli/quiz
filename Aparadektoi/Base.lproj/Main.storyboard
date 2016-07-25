@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MAC-Z6-79N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0pP-CX-3hp">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -19,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Aparadektoi Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-KM-x32">
-                                <rect key="frame" x="0.0" y="84" width="600" height="21"/>
+                                <rect key="frame" x="0.0" y="40" width="600" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcT-HU-lwh">
-                                <rect key="frame" x="350" y="155" width="250" height="182"/>
+                                <rect key="frame" x="350" y="111" width="250" height="226"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <segue destination="MGc-oE-5rl" kind="show" id="35E-tE-YO6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDH-Fr-q6g">
-                                <rect key="frame" x="0.0" y="155" width="250" height="182"/>
+                                <rect key="frame" x="0.0" y="111" width="250" height="226"/>
                                 <state key="normal" title="Join Game"/>
                             </button>
                         </subviews>
@@ -52,7 +51,6 @@
                             <constraint firstItem="u8r-KM-x32" firstAttribute="top" secondItem="Rsd-jK-00B" secondAttribute="bottom" constant="20" id="wMN-aG-WEQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FSI-1h-cYg"/>
                     <connections>
                         <outlet property="joinGame" destination="qDH-Fr-q6g" id="SGn-Kz-4Xj"/>
                         <outlet property="playGame" destination="rcT-HU-lwh" id="Z2V-Zj-cct"/>
@@ -75,13 +73,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epE-7N-f4X" userLabel="Timer" customClass="TimerLabel" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="5" y="74" width="590" height="50"/>
+                                <rect key="frame" x="5" y="30" width="590" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLd-Kn-NsK" userLabel="Answer0" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="254" width="600" height="54"/>
+                                <rect key="frame" x="0.0" y="210" width="600" height="63"/>
                                 <accessibility key="accessibilityConfiguration" identifier="one"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -94,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hS2-bF-D73" userLabel="Answer1" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="310" width="600" height="54"/>
+                                <rect key="frame" x="0.0" y="275" width="600" height="62.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="two"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -107,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfg-z2-CWL" userLabel="Answer2" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="366" width="600" height="53.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="600" height="62.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="three"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -120,7 +118,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHi-a9-vhv" userLabel="Answer3" customClass="AnswerButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="421.5" width="600" height="54"/>
+                                <rect key="frame" x="0.0" y="404" width="600" height="62.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="four"/>
                                 <state key="normal" title="Button"/>
                                 <userDefinedRuntimeAttributes>
@@ -132,15 +130,8 @@
                                     <action selector="markAnswer:" destination="MGc-oE-5rl" eventType="touchUpInside" id="S3q-Kd-eZK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-1n-YH0" userLabel="Next" customClass="NextQuestionButton" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="150" y="507" width="300" height="54"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="MGc-oE-5rl" kind="show" identifier="quizViewController" id="nGO-Dl-JZ7"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTx-3R-mGx" userLabel="Question" customClass="QuestionLabel" customModule="Aparadektoi" customModuleProvider="target">
-                                <rect key="frame" x="5" y="104" width="590" height="50"/>
+                                <rect key="frame" x="5" y="60" width="590" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -149,7 +140,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="width" secondItem="dLd-Kn-NsK" secondAttribute="width" id="3fz-Ms-ZpE"/>
-                            <constraint firstItem="wHC-1n-YH0" firstAttribute="top" secondItem="DHi-a9-vhv" secondAttribute="bottom" constant="31" id="4cf-Mw-ZQc"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="6dz-TH-M3I"/>
                             <constraint firstItem="dLd-Kn-NsK" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" id="A7b-ED-4LH"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="top" secondItem="hS2-bF-D73" secondAttribute="bottom" constant="2" id="AGS-wk-MEU"/>
@@ -160,24 +150,21 @@
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="NR9-2S-aPK"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="top" secondItem="dLd-Kn-NsK" secondAttribute="bottom" constant="2" id="PQk-XN-vCv"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="width" secondItem="dLd-Kn-NsK" secondAttribute="width" id="RIR-TV-82J"/>
-                            <constraint firstItem="wHC-1n-YH0" firstAttribute="height" secondItem="DHi-a9-vhv" secondAttribute="height" id="RMP-Fx-70v"/>
                             <constraint firstItem="DHi-a9-vhv" firstAttribute="top" secondItem="yfg-z2-CWL" secondAttribute="bottom" constant="2" id="T99-MM-fFq"/>
                             <constraint firstItem="NTx-3R-mGx" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" constant="5" id="TYO-rr-h06"/>
                             <constraint firstItem="NTx-3R-mGx" firstAttribute="top" secondItem="qRb-pD-vjL" secondAttribute="bottom" constant="40" id="WLK-G5-fFz"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="height" secondItem="dLd-Kn-NsK" secondAttribute="height" id="XWN-jf-f8V"/>
-                            <constraint firstItem="THc-lH-A46" firstAttribute="top" secondItem="wHC-1n-YH0" secondAttribute="bottom" constant="39" id="XXz-aI-Mku"/>
                             <constraint firstItem="yfg-z2-CWL" firstAttribute="height" secondItem="dLd-Kn-NsK" secondAttribute="height" id="Ymg-ck-wLX"/>
+                            <constraint firstItem="THc-lH-A46" firstAttribute="top" secondItem="DHi-a9-vhv" secondAttribute="bottom" constant="133.5" id="YpU-mG-W7E"/>
                             <constraint firstItem="dLd-Kn-NsK" firstAttribute="top" secondItem="NTx-3R-mGx" secondAttribute="bottom" constant="100" id="bt7-og-Y61"/>
                             <constraint firstItem="dLd-Kn-NsK" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="chF-kY-epJ"/>
                             <constraint firstItem="epE-7N-f4X" firstAttribute="height" secondItem="NTx-3R-mGx" secondAttribute="height" id="dBL-KC-Jxo"/>
-                            <constraint firstItem="wHC-1n-YH0" firstAttribute="width" secondItem="DHi-a9-vhv" secondAttribute="width" multiplier="1:2" id="dTh-iy-akr"/>
                             <constraint firstItem="epE-7N-f4X" firstAttribute="leading" secondItem="hFJ-aN-CLx" secondAttribute="leading" constant="5" id="e6Q-3K-Q9q"/>
                             <constraint firstAttribute="trailing" secondItem="NTx-3R-mGx" secondAttribute="trailing" constant="5" id="kfJ-aw-sfy"/>
                             <constraint firstItem="epE-7N-f4X" firstAttribute="top" secondItem="qRb-pD-vjL" secondAttribute="bottom" constant="10" id="kgt-20-xgZ"/>
                             <constraint firstAttribute="trailing" secondItem="epE-7N-f4X" secondAttribute="trailing" constant="5" id="lmD-4k-Dxs"/>
                             <constraint firstAttribute="trailing" secondItem="dLd-Kn-NsK" secondAttribute="trailing" id="uf0-RJ-wSR"/>
                             <constraint firstItem="hS2-bF-D73" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="yMh-KB-ZAQ"/>
-                            <constraint firstItem="wHC-1n-YH0" firstAttribute="centerX" secondItem="hFJ-aN-CLx" secondAttribute="centerX" id="z8C-TT-Arr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -196,26 +183,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3Z-Lm-hj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="-289"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WiN-L7-GnZ">
-            <objects>
-                <navigationController id="MAC-Z6-79N" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ci-iC-GrH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="0pP-CX-3hp" kind="relationship" relationship="rootViewController" id="0SP-wA-ng2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XgJ-CQ-1pg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="529" y="-289"/>
+            <point key="canvasLocation" x="1922" y="-289"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="35E-tE-YO6"/>
-    </inferredMetricsTieBreakers>
 </document>

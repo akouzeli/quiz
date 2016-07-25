@@ -26,19 +26,18 @@ class QuizViewController: UIViewController {
     // Variables related to the timer's counter.
     var timer = NSTimer()
     var quizTimer = Timer.timerSharedInstance
-    var counter: Int
     
     required init?(coder aDecoder: NSCoder) {
         let myQuizData = DataManager.dataSharedInstance
         // Initialize the quiz data set.
         quizDataSet = myQuizData.fetchQuizDataSetAtRandomIndex()
-        
-        counter = quizTimer.counter
         super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Define the transition style to use when presenting the view controller.
+        self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
         
         // Question and answers
         let question = quizDataSet.question
@@ -52,19 +51,10 @@ class QuizViewController: UIViewController {
             answerButtons[i].setTitle(answers[i].stringValue, forState: .Normal)
         }
         
-        
-       /* let seconds = 2.0
-        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
-        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
-            self.performSegueWithIdentifier("quizViewController", sender: self)
-        })*/
-        
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(displayTimer), userInfo: nil, repeats: true)
         
-
     }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -99,8 +89,19 @@ class QuizViewController: UIViewController {
         // Inactivate wrong answers.
         inactivateOtherAnswers(exceptFrom: sender.index, numOfAnswers: answersEvaluation.count)
         
-        // Pause timer when an answer is selected.
+        // Pause the timer when an answer is selected.
         timer.invalidate()
+        
+        // Stay on the current question for a while and then
+        // move to a new one.
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("quizViewController") as! QuizViewController
+      
+        let seconds = 1.0
+        let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
+        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(dispatchTime, dispatch_get_main_queue(), {
+            self.presentViewController(vc, animated: true, completion: nil)
+         })
     }
     
 }

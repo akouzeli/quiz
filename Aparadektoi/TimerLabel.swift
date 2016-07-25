@@ -20,7 +20,8 @@ class TimerLabel: UILabel {
         
         // Same color as answer button background color.
         self.textColor = UIColor(red: 86/255, green: 197/255, blue: 239/255, alpha: 1)
-        self.text = String(0)
+        //self.text = String(0)
+        self.text = String(Timer.timerSharedInstance.counter)
         
     }
     

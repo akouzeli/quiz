@@ -13,7 +13,7 @@ class DataManager {
     
     let filePath: String
     let jsonData: NSData
-    let json: JSON
+    var json: JSON
     
     static let dataSharedInstance = DataManager()
     
@@ -30,21 +30,40 @@ class DataManager {
      * a random set of question and relevant answers.
      */
     func fetchQuizDataSetAtRandomIndex() -> (question: String, answers: [JSON], answersEvaluation: [JSON]) {
-        let randomIndex = Int(arc4random_uniform(UInt32(json.count)))
-        
-        // Question string.
-        let question = json[randomIndex]["question"].stringValue
-        
-        let answersArray = json[randomIndex]["answers"].arrayValue
-        // The answers array and their evaluation array.
+        var question = ""
         var answers = [JSON]()
         var answersEvaluation = [JSON]()
         
-        for i in 0..<answersArray.count {
-            answers.append(answersArray[i]["text"])
-            answersEvaluation.append(answersArray[i]["correct"])
+        if json.arrayObject?.count != 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(json.count)))
+            
+            // Question string.
+            question = json[randomIndex]["question"].stringValue
+            
+            let answersArray = json[randomIndex]["answers"].arrayValue
+            // The answers array and their evaluation array.
+            answers = [JSON]()
+            answersEvaluation = [JSON]()
+            
+            for i in 0..<answersArray.count {
+                answers.append(answersArray[i]["text"])
+                answersEvaluation.append(answersArray[i]["correct"])
+            }
+            
+            // Remove specific data set from data array.
+            json.arrayObject?.removeAtIndex(randomIndex)
+                        
+        } else {
+            question = "Δυστυχώς, δεν υπάρχει άλλη ερώτηση..."
+            answers = ["Μπλα", "Μπλα", "Μπλα", "Μπλα"]
+            answersEvaluation = [false, false, false, false]
         }
+        
         return (question, answers, answersEvaluation)
+
+
     }
+    
+    
     
 }

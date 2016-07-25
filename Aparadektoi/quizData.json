@@ -82,5 +82,26 @@
                  "correct": true
                  }
                 ]
-     }
+     },
+     {
+     "question": "Ποια είναι η σωστή απάντηση στην ερώτηση q4?",
+     "answers": [
+                 {
+                 "text": "q4a0",
+                 "correct": true
+                 },
+                 {
+                 "text": "q4a1",
+                 "correct": false
+                 },
+                 {
+                 "text": "q4a2",
+                 "correct": false
+                 },
+                 {
+                 "text": "q4a3",
+                 "correct": false
+                 }
+                ]
+    }
 ]
