@@ -25,8 +25,12 @@
 		A8F227581D381F9E00333608 /* TimerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F227571D381F9E00333608 /* TimerLabel.swift */; };
 		A8F3D22E1D1D577000EA8807 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3D22D1D1D577000EA8807 /* AnswerButton.swift */; };
 		A8F3D2301D1D578400EA8807 /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F3D22F1D1D578400EA8807 /* QuestionLabel.swift */; };
+		A8F478CE1D54952C006E752B /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F478CD1D54952C006E752B /* GameOverViewController.swift */; };
+		A8F478D01D54CF90006E752B /* ScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F478CF1D54CF90006E752B /* ScoreLabel.swift */; };
 		A8F4F4771D3FAE7C0072A5D8 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */; };
+		A8F68E421D577E5800A856B8 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F68E411D577E5800A856B8 /* Score.swift */; };
 		A8F7D3501D3E758B006BFDA7 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F7D34D1D3E60D9006BFDA7 /* SwiftyJSON.framework */; };
+		A8F887591D588C3B0051729F /* string.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8F887581D588C3B0051729F /* string.txt */; };
 		FE29D307649FD0BEDE8948A5 /* Pods_Aparadektoi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A0F36F695038C36D440797 /* Pods_Aparadektoi.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,8 +82,12 @@
 		A8F227571D381F9E00333608 /* TimerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerLabel.swift; sourceTree = "<group>"; };
 		A8F3D22D1D1D577000EA8807 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		A8F3D22F1D1D578400EA8807 /* QuestionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
+		A8F478CD1D54952C006E752B /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		A8F478CF1D54CF90006E752B /* ScoreLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLabel.swift; sourceTree = "<group>"; };
 		A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		A8F68E411D577E5800A856B8 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A8F7D34D1D3E60D9006BFDA7 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Aparadektoi-haquietfackukgdzcrirpqgbabfd/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		A8F887581D588C3B0051729F /* string.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = string.txt; sourceTree = "<group>"; };
 		AD746EE977AA9B37C7E157E5 /* Pods-AparadektoiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AparadektoiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AparadektoiTests/Pods-AparadektoiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF50B4E3187E5B6CDDC003D9 /* Pods_AparadektoiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AparadektoiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24D8043D7D4CF87456E9825 /* Pods-Aparadektoi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aparadektoi.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aparadektoi/Pods-Aparadektoi.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				A87613A41D1BBEB900D3111A /* AppDelegate.swift */,
+				A8F478CD1D54952C006E752B /* GameOverViewController.swift */,
 				A8E2F0261D1E67B200706C43 /* QuizViewController.swift */,
 				A87613A61D1BBEB900D3111A /* ViewController.swift */,
 				A87613A81D1BBEB900D3111A /* Main.storyboard */,
@@ -190,6 +199,7 @@
 			children = (
 				A875B6071D250316003D36F9 /* quizData.json */,
 				A8F12BAB1D411BD500486FFE /* testData.json */,
+				A8F887581D588C3B0051729F /* string.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 			children = (
 				A8F4F4761D3FAE7C0072A5D8 /* DataManager.swift */,
 				A8EF4A2C1D3CEF2700FAF7A9 /* Timer.swift */,
+				A8F68E411D577E5800A856B8 /* Score.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -211,6 +222,7 @@
 				A8F227571D381F9E00333608 /* TimerLabel.swift */,
 				A8E2F0241D1E544200706C43 /* AppFonts.swift */,
 				A837EDCE1D34F750008D0945 /* NextQuestionButton.swift */,
+				A8F478CF1D54CF90006E752B /* ScoreLabel.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -349,6 +361,7 @@
 				A8F12BAC1D411BD500486FFE /* testData.json in Resources */,
 				A87613AC1D1BBEB900D3111A /* Assets.xcassets in Resources */,
 				A87613AA1D1BBEB900D3111A /* Main.storyboard in Resources */,
+				A8F887591D588C3B0051729F /* string.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +516,9 @@
 				A8EF4A2D1D3CEF2700FAF7A9 /* Timer.swift in Sources */,
 				A8F3D2301D1D578400EA8807 /* QuestionLabel.swift in Sources */,
 				A8E2F0271D1E67B200706C43 /* QuizViewController.swift in Sources */,
+				A8F478D01D54CF90006E752B /* ScoreLabel.swift in Sources */,
+				A8F68E421D577E5800A856B8 /* Score.swift in Sources */,
+				A8F478CE1D54952C006E752B /* GameOverViewController.swift in Sources */,
 				A8F3D22E1D1D577000EA8807 /* AnswerButton.swift in Sources */,
 				A837EDCF1D34F750008D0945 /* NextQuestionButton.swift in Sources */,
 				A87613A51D1BBEB900D3111A /* AppDelegate.swift in Sources */,
