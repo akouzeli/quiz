@@ -17,7 +17,7 @@ class QuizViewController: UIViewController {
     @IBOutlet var answerButtons: [AnswerButton]!
     
     // Timer's label.
-    @IBOutlet weak var countingLabel: TimerLabel!
+    @IBOutlet weak var counterLabel: TimerLabel!
     
     // The property variable that holds a random data set, consisted of a question, 
     // its relevant answers and their evaluation.
@@ -26,6 +26,7 @@ class QuizViewController: UIViewController {
     // Variables related to the timer's counter.
     var timer = NSTimer()
     var quizTimer = Timer.timerSharedInstance
+    var score = Score.scoreSharedInstance
     
     required init?(coder aDecoder: NSCoder) {
         let myQuizData = DataManager.dataSharedInstance
@@ -43,15 +44,28 @@ class QuizViewController: UIViewController {
         let question = quizDataSet.question
         let answers = quizDataSet.answers
         
-        // Display the question
-        questionLabel.text = question
-        
-        // Display the answers
-        for i in 0..<answerButtons.count {
-            answerButtons[i].setTitle(answers[i].stringValue, forState: .Normal)
+        if question != "" {
+            // Display the question
+            questionLabel.text = question
+            
+            // Display the answers
+            for i in 0..<answerButtons.count {
+                answerButtons[i].setTitle(answers[i].stringValue, forState: .Normal)
+            }
+            
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(displayTimer), userInfo: nil, repeats: true)
+        } else {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let gameOverViewController: GameOverViewController = storyboard.instantiateViewControllerWithIdentifier("gameOverID") as! GameOverViewController
+            
+//            self.presentViewController(gameOverViewController, animated: true, completion: nil)
+            
+            self.addChildViewController(gameOverViewController)
+            gameOverViewController.view.frame = self.view.frame
+            self.view.addSubview(gameOverViewController.view)
+            gameOverViewController.didMoveToParentViewController(self)
+
         }
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(displayTimer), userInfo: nil, repeats: true)
         
     }
    
@@ -62,8 +76,8 @@ class QuizViewController: UIViewController {
     
     // Method used for displaying the timer's counter.
     func displayTimer() {
-        let timerValue = quizTimer.decreaseTimerCounter()
-        countingLabel.text = String(timerValue)
+        let timerValue = quizTimer.increaseTimerCounter()
+        counterLabel.text = String(timerValue)
     }
     
     // Inactivate answers that were not selected
@@ -79,13 +93,16 @@ class QuizViewController: UIViewController {
     @IBAction func markAnswer(sender: AnswerButton) {
         // Array that holds the answers evaluation.
         var answersEvaluation = quizDataSet.answersEvaluation
+        
         // Mark wrong answer.
         if !answersEvaluation[sender.index] {
             sender.backgroundColor = sender.wrongAnswerBackgroundColor
         } else {
             // Mark correct answer.
             sender.backgroundColor = sender.correctAnswerBackgroundColor
+            score.increaseScore()
         }
+        
         // Inactivate wrong answers.
         inactivateOtherAnswers(exceptFrom: sender.index, numOfAnswers: answersEvaluation.count)
         
@@ -94,14 +111,16 @@ class QuizViewController: UIViewController {
         
         // Stay on the current question for a while and then
         // move to a new one.
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("quizViewController") as! QuizViewController
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("quizViewController") as! QuizViewController        
       
-        let seconds = 1.0
+        let seconds = 0.5
         let delay = seconds * Double(NSEC_PER_SEC)  // nanoseconds per seconds
         let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(dispatchTime, dispatch_get_main_queue(), {
             self.presentViewController(vc, animated: true, completion: nil)
          })
     }
+    
+    
     
 }

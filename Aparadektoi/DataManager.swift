@@ -54,13 +54,16 @@ class DataManager {
             json.arrayObject?.removeAtIndex(randomIndex)
                         
         } else {
-            question = "Δυστυχώς, δεν υπάρχει άλλη ερώτηση..."
-            answers = ["Μπλα", "Μπλα", "Μπλα", "Μπλα"]
-            answersEvaluation = [false, false, false, false]
+//            question = "Δυστυχώς, δεν υπάρχει άλλη ερώτηση..."
+//            answers = ["Μπλα", "Μπλα", "Μπλα", "Μπλα"]
+//            answersEvaluation = [false, false, false, false]
+            question = ""
+            answers = []
+            answersEvaluation = []
+            
         }
         
         return (question, answers, answersEvaluation)
-
 
     }
     

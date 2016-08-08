@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -173,7 +174,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="countingLabel" destination="epE-7N-f4X" id="0rh-w9-QDF"/>
+                        <outlet property="counterLabel" destination="epE-7N-f4X" id="gDI-4e-QFS"/>
                         <outlet property="questionLabel" destination="NTx-3R-mGx" id="vA0-KU-4sy"/>
                         <outletCollection property="answerButtons" destination="dLd-Kn-NsK" collectionClass="NSMutableArray" id="epj-RU-h47"/>
                         <outletCollection property="answerButtons" destination="hS2-bF-D73" collectionClass="NSMutableArray" id="vi0-od-CJp"/>
@@ -184,6 +185,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F3Z-Lm-hj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1922" y="-289"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="WDw-v5-vCu">
+            <objects>
+                <viewController storyboardIdentifier="gameOverID" id="U8Y-an-8Wp" customClass="GameOverViewController" customModule="Aparadektoi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vXO-JY-JyD"/>
+                        <viewControllerLayoutGuide type="bottom" id="LYM-Er-N6l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vWI-YC-0BA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ono-Dp-JUg">
+                                <rect key="frame" x="-113" y="0.0" width="825" height="600"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBV-Fh-TQL" customClass="ScoreLabel" customModule="Aparadektoi" customModuleProvider="target">
+                                <rect key="frame" x="150" y="120" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1y-Ge-kC4">
+                                <rect key="frame" x="248" y="530" width="103" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E1y-Ge-kC4" firstAttribute="width" secondItem="Ono-Dp-JUg" secondAttribute="width" multiplier="1:8" id="5AO-8Z-G34"/>
+                            <constraint firstItem="Ono-Dp-JUg" firstAttribute="width" secondItem="vWI-YC-0BA" secondAttribute="width" multiplier="11:8" id="9tP-F6-VKJ"/>
+                            <constraint firstItem="UBV-Fh-TQL" firstAttribute="width" secondItem="vWI-YC-0BA" secondAttribute="width" multiplier="1:2" id="HB9-ke-YVO"/>
+                            <constraint firstItem="UBV-Fh-TQL" firstAttribute="centerX" secondItem="Ono-Dp-JUg" secondAttribute="centerX" id="QJC-b2-wxT"/>
+                            <constraint firstItem="Ono-Dp-JUg" firstAttribute="height" secondItem="vWI-YC-0BA" secondAttribute="height" id="SzA-iv-wI8"/>
+                            <constraint firstItem="Ono-Dp-JUg" firstAttribute="centerX" secondItem="vWI-YC-0BA" secondAttribute="centerX" id="bXM-LY-0vt"/>
+                            <constraint firstItem="UBV-Fh-TQL" firstAttribute="top" secondItem="Ono-Dp-JUg" secondAttribute="top" constant="120" id="bkY-b9-Nk9"/>
+                            <constraint firstItem="Ono-Dp-JUg" firstAttribute="centerY" secondItem="vWI-YC-0BA" secondAttribute="centerY" id="fpr-x6-cKp"/>
+                            <constraint firstItem="E1y-Ge-kC4" firstAttribute="leading" secondItem="Ono-Dp-JUg" secondAttribute="trailing" constant="-350" id="hxo-a7-wum"/>
+                            <constraint firstItem="E1y-Ge-kC4" firstAttribute="centerX" secondItem="Ono-Dp-JUg" secondAttribute="centerX" id="p9D-i8-Mx1"/>
+                            <constraint firstItem="E1y-Ge-kC4" firstAttribute="bottom" secondItem="Ono-Dp-JUg" secondAttribute="bottom" constant="-40" id="rYZ-yE-BCN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="hxo-a7-wum"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="UBV-Fh-TQL" id="A1R-nV-2HR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bss-qt-M08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2570" y="-289"/>
         </scene>
     </scenes>
 </document>

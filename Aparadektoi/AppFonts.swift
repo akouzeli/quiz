@@ -14,6 +14,7 @@ class AppFonts: UIFont {
     let questionFont: UIFont
     let nextQuestionFont: UIFont
     let timerFont: UIFont
+    let scoreFont: UIFont
     
     /** 
      * Static property variable, that will be used
@@ -27,6 +28,8 @@ class AppFonts: UIFont {
         timerFont = UIFont(name: "HelveticaNeue-Bold", size: 14)!
         answerFont = UIFont(name: "HelveticaNeue", size: 12)!
         nextQuestionFont = UIFont(name: "HelveticaNeue-Medium", size: 12)!
+        scoreFont = UIFont(name: "HelveticaNeue-Bold", size: 18)!
+
     }
     
 }

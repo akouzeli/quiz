@@ -16,7 +16,7 @@ class Timer {
         counter = 0
     }
     
-    func decreaseTimerCounter() -> Int {
+    func increaseTimerCounter() -> Int {
         counter += 1
         return counter
     }
